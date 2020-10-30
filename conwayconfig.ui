@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConwayConfig</class>
+ <widget class="QWidget" name="ConwayConfig">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="surviveBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>351</width>
+     <height>69</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Survive</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <item>
+     <widget class="QRadioButton" name="s0Button">
+      <property name="text">
+       <string>&amp;0</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s1Button">
+      <property name="text">
+       <string>&amp;1</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s2Button">
+      <property name="text">
+       <string>&amp;2</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s3Button">
+      <property name="text">
+       <string>&amp;3</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s4Button">
+      <property name="text">
+       <string>&amp;4</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s5Button">
+      <property name="text">
+       <string>&amp;5</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s6Button">
+      <property name="text">
+       <string>&amp;6</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s7Button">
+      <property name="text">
+       <string>&amp;7</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="s8Button">
+      <property name="text">
+       <string>&amp;8</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="birthBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>0</y>
+     <width>351</width>
+     <height>69</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Birth</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="rightMargin">
+     <number>12</number>
+    </property>
+    <item>
+     <widget class="QRadioButton" name="b0Button">
+      <property name="text">
+       <string>&amp;0</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b1Button">
+      <property name="text">
+       <string>&amp;1</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b2Button">
+      <property name="text">
+       <string>&amp;2</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b3Button">
+      <property name="text">
+       <string>&amp;3</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b4Button">
+      <property name="text">
+       <string>&amp;4</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b5Button">
+      <property name="text">
+       <string>&amp;5</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b6Button">
+      <property name="text">
+       <string>&amp;6</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b7Button">
+      <property name="text">
+       <string>&amp;7</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QRadioButton" name="b8Button">
+      <property name="text">
+       <string>&amp;8</string>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>surviveBox</zorder>
+  <zorder>birthBox</zorder>
+  <zorder>b0Button</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

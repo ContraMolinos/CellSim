@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+CONFIG += c++11
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = CellSim
@@ -28,13 +28,16 @@ SOURCES += \
         cellsimmw.cpp \
         worldcontroller.cpp \
         worldscene.cpp \
-    voxel.cpp
+    voxel.cpp \
+    conwayconfig.cpp
 
 HEADERS += \
         cellsimmw.h \
         worldcontroller.h \
         worldscene.h \
-    voxel.h
+    voxel.h \
+    conwayconfig.h
 
 FORMS += \
-        cellsimmw.ui
+        cellsimmw.ui \
+    conwayconfig.ui

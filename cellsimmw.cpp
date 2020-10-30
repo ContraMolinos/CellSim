@@ -61,3 +61,9 @@ void cellSimMW::on_advanceButton_clicked()
 {
     controller->advance();
 }
+
+void cellSimMW::on_configButton_clicked()
+{
+    controller->openConfig();
+}
+

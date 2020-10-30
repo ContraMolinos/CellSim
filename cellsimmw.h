@@ -25,13 +25,10 @@ public:
 private slots:
     void on_StartStop_clicked();
     void switchStartStopText();
-
-
     void on_resetButton_clicked();
-
     void on_clearButton_clicked();
-
     void on_advanceButton_clicked();
+    void on_configButton_clicked();
 
 protected:
     /*!

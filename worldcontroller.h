@@ -10,6 +10,7 @@
 #include <QTime>
 #include "worldscene.h"
 #include "voxel.h"
+#include "conwayconfig.h"
 #include <QDebug>
 
 /*!
@@ -25,6 +26,7 @@ public:
     void makeItems(qreal _prob);
     void startStop();
     void reset(qreal _prob);
+    void openConfig();
 
 public slots:
     /*!
@@ -32,6 +34,8 @@ public slots:
      */
     void advance();
     void itemSwitchedByMouseClick(QPointF _pos);
+    void changeBirthConf(uint _idx, bool _value);
+    void changeSurvivalConf(uint _idx, bool _value);
 
 signals:
     void worldReachedFinalState();
@@ -45,6 +49,9 @@ private:
     WorldScene *wScene;
     QRectF worldDimensions;
     qreal initialProb;
+    bool birth[9];
+    bool survive[9];
+    ConwayConfig *conwayConf;
     const uint worldWidth=500;
     const uint worldHeight=300;
     const uint voxelWidth=5;

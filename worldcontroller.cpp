@@ -1,6 +1,27 @@
 #include "worldcontroller.h"
 
-WorldController::WorldController(QObject *parent) : QObject(parent), initialProb(0.05)
+WorldController::WorldController(QObject *parent) :
+    QObject(parent),
+    initialProb(0.05),
+    birth{false,//0
+           false,//1
+           false,//2
+           true,//3
+           false,//4
+           false,//5
+           false,//6
+           false,//7
+           false},//8
+    survive{false,//0
+    false,//1
+    true,//2
+    true,//3
+    false,//4
+    false,//5
+    false,//6
+    false,//7
+    false},//8
+    conwayConf(new ConwayConfig())
 {
     worldDimensions.setRect(0.0,0.0,worldWidth,worldHeight);
     timer=new QTimer(this);
@@ -8,10 +29,15 @@ WorldController::WorldController(QObject *parent) : QObject(parent), initialProb
     wScene->setSceneRect(worldDimensions);
     QObject::connect(timer,&QTimer::timeout,this, &WorldController::advance);
     QObject::connect(wScene,&WorldScene::mouseClicked,this,&WorldController::itemSwitchedByMouseClick);
+
+    conwayConf->setRadioButtons(birth,survive);
+    QObject::connect(conwayConf,&ConwayConfig::birthConfChanged,this,&WorldController::changeBirthConf);
+    QObject::connect(conwayConf,&ConwayConfig::survivalConfChanged,this,&WorldController::changeSurvivalConf);
 }
 
 WorldController::~WorldController()
 {
+    delete conwayConf;
 }
 
 WorldScene *WorldController::scene()
@@ -49,11 +75,26 @@ void WorldController::itemSwitchedByMouseClick(QPointF _pos)
     itemList[i][j].switchFill();
 }
 
+void WorldController::changeBirthConf(uint _idx, bool _value)
+{
+    birth[_idx]=_value;
+}
+
+void WorldController::changeSurvivalConf(uint _idx, bool _value)
+{
+    survive[_idx]=_value;
+}
+
 void WorldController::reset(qreal _prob)
 {
     itemList.clear();
     wScene->clear();
     makeItems(_prob);
+}
+
+void WorldController::openConfig()
+{
+    conwayConf->show();
 }
 
 void WorldController::startStop()
@@ -73,12 +114,12 @@ bool WorldController::itemMustSwitch(uint i, uint j)
     uint n=itemList[lowerI][j].status()+itemList[i][lowerJ].status()+itemList[upperI][j].status()+itemList[i][upperJ].status()+itemList[upperI][upperJ].status()+itemList[upperI][lowerJ].status()+itemList[lowerI][upperJ].status()+itemList[lowerI][lowerJ].status();
     if(itemList[i][j].status())
     {
-        if(n<2 || n>3)
+        if(!survive[n])     //Die
             return true;
     }
     else if(!itemList[i][j].status())
     {
-        if(n>2&&n<4)
+        if(birth[n])    //Born
             return true;
     }
     return false;
